@@ -19,6 +19,7 @@ var aa = {
     "font-style": 1,
     "font-weight": 1,
     height: 0,
+    id: 1,
     "letter-spacing": 0,
     opacity: 0,
     r: 0,
@@ -415,7 +416,7 @@ function rappar(svg) {
     eve.on("elemental.tag.g", function (data, attr) {
         var el = {};
         groups.push(el);
-        for (var at in attr) if (attr.hasOwnProperty(at)) {
+        for (var at in attr) if (attr.hasOwnProperty(at) && at != 'id') {
             eve("rappar.g.attr." + at, el, attr[at], at);
         }
         eve("rappar.g.attrend", el);
